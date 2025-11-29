@@ -243,10 +243,16 @@ body {
     position: absolute;
     bottom: 50px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 0);
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s 1s forwards;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }
 
 .scroll-indicator span {
@@ -255,6 +261,8 @@ body {
     letter-spacing: 0.2em;
     color: var(--text-secondary);
     margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
 }
 
 .scroll-arrow {
@@ -264,6 +272,9 @@ body {
     border-radius: 20px;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-arrow::before {
@@ -271,7 +282,7 @@ body {
     position: absolute;
     top: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 0);
     width: 6px;
     height: 6px;
     background: var(--primary-color);
@@ -280,8 +291,8 @@ body {
 }
 
 @keyframes scroll-down {
-    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-    50% { transform: translateX(-50%) translateY(20px); opacity: 0; }
+    0%, 100% { transform: translate(-50%, 0); opacity: 1; }
+    50% { transform: translate(-50%, 20px); opacity: 0; }
 }
 
 @keyframes fadeIn {
@@ -347,36 +358,68 @@ body {
 .icon-orbit {
     font-size: 3rem;
     position: absolute;
-    animation: orbit 20s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    width: 60px;
+    height: 60px;
 }
 
 .icon-orbit.orbit-1 {
+    animation: orbit-1 20s linear infinite;
     animation-delay: 0s;
     left: 10%;
+    top: 50%;
 }
 
 .icon-orbit.orbit-2 {
+    animation: orbit-2 20s linear infinite;
     animation-delay: -5s;
     right: 10%;
+    top: 50%;
 }
 
 .icon-orbit.orbit-3 {
+    animation: orbit-3 20s linear infinite;
     animation-delay: -10s;
     top: 20%;
     left: 50%;
 }
 
 .icon-orbit.orbit-4 {
+    animation: orbit-4 20s linear infinite;
     animation-delay: -15s;
     bottom: 20%;
     right: 30%;
 }
 
-@keyframes orbit {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-20px) rotate(90deg); }
-    50% { transform: translateY(0) rotate(180deg); }
-    75% { transform: translateY(20px) rotate(270deg); }
+@keyframes orbit-1 {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0) rotate(0deg); }
+    25% { transform: translate(-50%, -50%) translateY(-20px) rotate(90deg); }
+    50% { transform: translate(-50%, -50%) translateY(0) rotate(180deg); }
+    75% { transform: translate(-50%, -50%) translateY(20px) rotate(270deg); }
+}
+
+@keyframes orbit-2 {
+    0%, 100% { transform: translate(50%, -50%) translateY(0) rotate(0deg); }
+    25% { transform: translate(50%, -50%) translateY(-20px) rotate(90deg); }
+    50% { transform: translate(50%, -50%) translateY(0) rotate(180deg); }
+    75% { transform: translate(50%, -50%) translateY(20px) rotate(270deg); }
+}
+
+@keyframes orbit-3 {
+    0%, 100% { transform: translate(-50%, 0) translateY(0) rotate(0deg); }
+    25% { transform: translate(-50%, 0) translateY(-20px) rotate(90deg); }
+    50% { transform: translate(-50%, 0) translateY(0) rotate(180deg); }
+    75% { transform: translate(-50%, 0) translateY(20px) rotate(270deg); }
+}
+
+@keyframes orbit-4 {
+    0%, 100% { transform: translate(50%, 50%) translateY(0) rotate(0deg); }
+    25% { transform: translate(50%, 50%) translateY(-20px) rotate(90deg); }
+    50% { transform: translate(50%, 50%) translateY(0) rotate(180deg); }
+    75% { transform: translate(50%, 50%) translateY(20px) rotate(270deg); }
 }
 
 /* ==================== SECTION 3: ARSENAL ==================== */
@@ -439,6 +482,10 @@ body {
     margin-bottom: 1.5rem;
     filter: grayscale(100%);
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .tech-card:hover .tech-icon {
@@ -518,13 +565,16 @@ body {
     position: absolute;
     left: 50%;
     top: 0;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
     background: var(--primary-color);
     border-radius: 50%;
     box-shadow: var(--glow-primary);
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .timeline-dot::before {
@@ -1043,7 +1093,7 @@ body {
     
     .timeline-dot {
         left: 20px;
-        transform: translateX(0);
+        transform: translate(0, -50%);
     }
     
     .timeline-content {
