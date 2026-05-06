@@ -1,4 +1,4 @@
-# SHAMIL — Portfolio (updated)
+# SHAMIL — Portfolio
 
 A cinematic, scroll-driven personal portfolio. Built as a single long-scroll experience that opens with a five-phase pinned 3D scroll sequence and continues through eight typographically-driven sections, ending in a black-curtain signature reveal.
 
